@@ -100,35 +100,61 @@ body {
 }
 
 .btn {
-  background: url('../images/btn-bg.png');
-  background-size: cover;
-  background-position: top;
+  position: relative;
   width: (744/2)+px;
   height: (204/2)+px;
+  line-height: (204/2)+px;
   display: block;
   text-decoration: none;
   text-transform: uppercase;
   vertical-align: middle;
   position: relative;
-  font-family: 'GothamPro-Medium';
+  font-family: 'GothamPro-Light';
   margin: (64-10)/2+px 0;
   text-align: center;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent; /* For some Androids */
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/btn-sprite.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    z-index: 1;
+    transition: opacity .05s ease;
+  }
   &:before {
-    display: inline-block;
-    content: '';
-    width: 0;
-    height: 100%;
-    vertical-align: middle;
+    background-position: 0 0;
+    opacity: 1;
+  }
+  &:after {
+    background-position: 0 -102px;
+    opacity: 0;
+  }
+  &:not(.disabled) {
+    &:active, &.btn-on-active {
+      &:before {
+        opacity: 0;
+      }
+      &:after {
+        opacity: 1;
+      }
+    }
   }
   .title {
+    position: relative;
+    z-index: 2;
     font-size: 20px;
     line-height: 27px;
     letter-spacing: -0.0005em;
     color: white;
     display: inline-block;
     vertical-align: middle;
+    line-height: 1.4;
   }
   &.disabled {
     opacity: 0.5;
@@ -157,6 +183,34 @@ h2 {
   text-transform: uppercase;
 }
 
+.background-list {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    transition: opacity 5s linear;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
 .slide {
   position: absolute;
   width: 1024px;
@@ -166,6 +220,7 @@ h2 {
   opacity: 0;
   transform: translate(0px, -768px);
   transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: 1;
   &.active {
     top: 0;
     transform: translate(0px, 0px);
@@ -285,6 +340,7 @@ h2 {
       width: (1838/2)+px;
       margin: 0 auto;
       margin-top: (152/2)+px;
+      margin-bottom: 90px;
       .photo {
         width: (890/2)+px;
         float: left;
@@ -364,10 +420,13 @@ h2 {
         margin: 18px 0;
         padding: 0 18px;
         box-sizing: border-box;
-        font-family: "Lato";
+        font-family: "Lato-Light";
         font-weight: lighter;
         color: white;
       }
+    }
+    .btn {
+      margin-top: 25px;
     }
   }
 }
@@ -380,9 +439,14 @@ h2 {
 form {
   &.photo-list {
     width: 936px;
-    height: (1190/2)+px;
+    //height: (1190/2)+px;
+    position: absolute;
     margin: 0 auto;
     margin-top: 30px;
+    top: 170px;
+    left: 50%;
+    bottom: 0;
+    margin-left: -(936/2)+px;
     //margin: 0 auto;
     overflow: auto;
     //position: absolute;
@@ -394,7 +458,7 @@ form {
     -webkit-mask-image: -webkit-gradient(
     linear, center top, center bottom, 
     color-stop(0.85,  rgba(0,0,0,1)),
-    color-stop(1.0,  rgba(0,0,0,0)));
+    color-stop(1.0,  rgba(0,0,0,.1)));
     label {
       display: block;
       float: left;

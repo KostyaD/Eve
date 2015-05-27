@@ -164,5 +164,40 @@ $(document).ready(function(){
     });
     
   });
+
+  $(document)
+  .on('touchstart', '.btn', function(){
+    $(this).addClass('btn-on-active');
+  })
+  .on('touchend', '.btn', function(){
+    $(this).removeClass('btn-on-active');
+  });
+
+  var background = function() {
+    var settings = {
+      count: 3,
+      time: 4000,
+      path: 'images/back-',
+      parent: '.js-background',
+      active: 0
+    }
+    var auto = function() {
+      $(settings.parent).find('li').eq(settings.active).addClass('active')
+        .siblings().removeClass('active');
+      settings.active++;
+      if(settings.active == settings.count) {
+        settings.active = 0;
+      }
+      setTimeout(auto, settings.time);
+    }
+    var init = function() {
+      for(var i = 0; i < settings.count; i++) {
+        $(settings.parent).append('<li style="background-image: url(' + settings.path + i + '.jpg);"></li>');
+      }
+      auto();
+    }
+    init();
+  }
+  background();
   
 });
