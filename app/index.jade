@@ -1,0 +1,131 @@
+extends layout
+
+block content
+  a.reload(href="index.html")
+  .slide.n1
+    .v-center
+      a.btn(href="#participate")
+        .title принять участие<br> в конкурсе
+      br
+      a.btn(href="#print")
+        .title Распечатать фото
+      .text или
+      a.btn(href="#email")
+        .title Отправить по e-mail
+  .slide.n2.print
+    h2 Выберите лучшее фото
+    form.photo-list(data-maxselect=1, data-url=url+'/print/')
+      .cf
+      a.btn.disabled(href="#isprinted")
+        .title Завершить
+  .slide.n3.isprinted
+    h2(style="margin-top: 165px;") Фото отправлено на печать
+    h2(style="margin-top: 75px; margin-bottom: 40px;") Теперь вы можете:
+    center
+      a.btn(href="#participate")
+        .title принять участие<br> в конкурсе
+      a.btn(href="#email")
+        .title Отправить по e-mail
+  .slide.n4.email
+    h2 Выберите лучшие фото
+    form.photo-list(data-maxselect=3)
+      .cf
+      a.btn.disabled(href="#isemail")
+        .title Завершить
+  .slide.n5.isemail
+    h2(style="margin-top: 194px;") Укажите ваш e-mail
+    input(type="email" name="email" style="margin-top: 65px; margin-bottom: 35px;")
+    center
+      a.btn.disabled(href="#isemailsend")
+        .title Отправить
+  .slide.n6.isemailsend
+    h2(style="margin-top: 165px;") Фото отправлены на ваш e-mail
+    h2(style="margin-top: 75px; margin-bottom: 40px;") Теперь вы можете:
+    center
+      a.btn(href="#participate")
+        .title принять участие<br> в конкурсе
+      a.btn(href="#print")
+        .title Распечатать фото
+  .slide.n7.participate
+    h2 Правила участия в конкурсе
+    .text
+      p.
+        Участники конкурсов, приславшие свои фотоработы, гарантируют свои права
+        на предоставляемые фотографии и фотоматериалы. В случае возникновения
+        каких-либо претензий третьих лиц в отношении указанной фотографии,
+        Участник обязуется урегулировать их своими силами и за свой счет, при
+        этом фотография сни мается с конкурса без каких-либо условий.
+        Подтверждением авторства фотографии является наличие копии присланной на
+        конкурс фотографии в высоком разрешении (не менее 2000х1500 точек) и
+        предоставление такой копии перед получением приза в электронном или
+        печатном виде.
+      center
+        br
+        br
+        label
+          input(type="checkbox" name="agree" checked)
+          span.title Принимаю условия конкурса
+        br
+        br
+        a.btn(href="#participate-photo")
+          .title Выбрать фото
+  .slide.n8.participate-photo
+    h2 Выберите фото для конкурса
+    form.photo-list(data-maxselect=1)
+      .cf
+      a.btn.disabled(href="#answer")
+        .title Завершить
+  .slide.n9.answer
+    h2 Ответьте на вопрос
+    .text Что для тебя быть на вершине стиля?
+    textarea(name="answer")
+    center
+      a.btn.disabled(href="#preview")
+        .title Ответить
+  .slide.n10.preview
+    h2 Ваша заявка на участие
+    .row
+      .photo
+        img(src="http://dummyimage.com/890x598/")
+      .text
+        strong Быть на вершине стиля для меня это:
+        br
+        p.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          massa nibh, accumsan et lacus id, aliquet fringilla sem. Phasellus id
+          massa sit amet felis pulvinar sollicitudin. Suspendisse sit amet mi id
+          eros vehicula tempor sit amet.
+        a.edit_text.btn-nostyle(href="#answer") Редактировать текст
+        br
+        a.edit_photo.btn-nostyle(href="#participate-photo") Выбрать другое фото
+      .cf
+    center
+      a.btn(href="#socials")
+        .title Далее
+  .slide.n11.socials
+    h2 Страницы в соцсетях
+    form
+      .row
+        img.ico(src="images/ico-tw.png")
+        input(name="tw" placeholder="Twitter")
+      .row
+        img.ico(src="images/ico-vk.png")
+        input(name="vk" placeholder="Вконтакте")
+      .row
+        img.ico(src="images/ico-fb.png")
+        input(name="fb" placeholder="Facebook")
+      .row
+        img.ico(src="images/ico-ok.png")
+        input(name="ok" placeholder="Одноклассники")
+    center
+      a.btn.disabled(href="#isparicipate")
+        .title Отправить
+  .slide.n12.isparicipate
+    h2(style="margin-top: 165px;") ваша заявка приянята!
+    h2(style="margin-top: 75px; margin-bottom: 40px;") Теперь вы можете:
+    center
+      a.btn(href="#print")
+        .title Распечатать фото
+      a.btn(href="#email")
+        .title Отправить по e-mail
+      

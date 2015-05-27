@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>EVE Photo</title>
+    <meta name="description" content="">
+    <!--meta(name='viewport' content='width=device-width, initial-scale=1')-->
+    <!--meta(name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi")-->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory-->
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/vendor/modernizr.js"></script>
+    <script>var _url = 'http://192.168.2.112:8000';</script>
+  </head>
+  <body><a href="index.html" class="reload"></a>
+    <div class="slide n1">
+      <div class="v-center"><a href="#participate" class="btn">
+          <div class="title">принять участие<br> в конкурсе</div></a><br><a href="#print" class="btn">
+          <div class="title">Распечатать фото</div></a>
+        <div class="text">или</div><a href="#email" class="btn">
+          <div class="title">Отправить по e-mail</div></a>
+      </div>
+    </div>
+    <div class="slide n2 print">
+      <h2>Выберите лучшее фото</h2>
+      <form data-maxselect='1' data-url="http://192.168.2.112:8000/print/" class="photo-list">
+        <div class="cf"></div><a href="#isprinted" class="btn disabled">
+          <div class="title">Завершить</div></a>
+      </form>
+    </div>
+    <div class="slide n3 isprinted">
+      <h2 style="margin-top: 165px;">Фото отправлено на печать</h2>
+      <h2 style="margin-top: 75px; margin-bottom: 40px;">Теперь вы можете:</h2>
+      <center><a href="#participate" class="btn">
+          <div class="title">принять участие<br> в конкурсе</div></a><a href="#email" class="btn">
+          <div class="title">Отправить по e-mail</div></a></center>
+    </div>
+    <div class="slide n4 email">
+      <h2>Выберите лучшие фото</h2>
+      <form data-maxselect='3' class="photo-list">
+        <div class="cf"></div><a href="#isemail" class="btn disabled">
+          <div class="title">Завершить</div></a>
+      </form>
+    </div>
+    <div class="slide n5 isemail">
+      <h2 style="margin-top: 194px;">Укажите ваш e-mail</h2>
+      <input type="email" name="email" style="margin-top: 65px; margin-bottom: 35px;">
+      <center><a href="#isemailsend" class="btn disabled">
+          <div class="title">Отправить</div></a></center>
+    </div>
+    <div class="slide n6 isemailsend">
+      <h2 style="margin-top: 165px;">Фото отправлены на ваш e-mail</h2>
+      <h2 style="margin-top: 75px; margin-bottom: 40px;">Теперь вы можете:</h2>
+      <center><a href="#participate" class="btn">
+          <div class="title">принять участие<br> в конкурсе</div></a><a href="#print" class="btn">
+          <div class="title">Распечатать фото</div></a></center>
+    </div>
+    <div class="slide n7 participate">
+      <h2>Правила участия в конкурсе</h2>
+      <div class="text">
+        <p>
+          Участники конкурсов, приславшие свои фотоработы, гарантируют свои права
+          на предоставляемые фотографии и фотоматериалы. В случае возникновения
+          каких-либо претензий третьих лиц в отношении указанной фотографии,
+          Участник обязуется урегулировать их своими силами и за свой счет, при
+          этом фотография сни мается с конкурса без каких-либо условий.
+          Подтверждением авторства фотографии является наличие копии присланной на
+          конкурс фотографии в высоком разрешении (не менее 2000х1500 точек) и
+          предоставление такой копии перед получением приза в электронном или
+          печатном виде.
+        </p>
+        <center><br><br>
+          <label>
+            <input type="checkbox" name="agree" checked><span class="title">Принимаю условия конкурса</span>
+          </label><br><br><a href="#participate-photo" class="btn">
+            <div class="title">Выбрать фото</div></a>
+        </center>
+      </div>
+    </div>
+    <div class="slide n8 participate-photo">
+      <h2>Выберите фото для конкурса</h2>
+      <form data-maxselect='1' class="photo-list">
+        <div class="cf"></div><a href="#answer" class="btn disabled">
+          <div class="title">Завершить</div></a>
+      </form>
+    </div>
+    <div class="slide n9 answer">
+      <h2>Ответьте на вопрос</h2>
+      <div class="text">Что для тебя быть на вершине стиля?</div>
+      <textarea name="answer"></textarea>
+      <center><a href="#preview" class="btn disabled">
+          <div class="title">Ответить</div></a></center>
+    </div>
+    <div class="slide n10 preview">
+      <h2>Ваша заявка на участие</h2>
+      <div class="row">
+        <div class="photo"><img src="http://dummyimage.com/890x598/"></div>
+        <div class="text"><strong>Быть на вершине стиля для меня это:</strong><br>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            massa nibh, accumsan et lacus id, aliquet fringilla sem. Phasellus id
+            massa sit amet felis pulvinar sollicitudin. Suspendisse sit amet mi id
+            eros vehicula tempor sit amet.
+          </p><a href="#answer" class="edit_text btn-nostyle">Редактировать текст</a><br><a href="#participate-photo" class="edit_photo btn-nostyle">Выбрать другое фото</a>
+        </div>
+        <div class="cf"></div>
+      </div>
+      <center><a href="#socials" class="btn">
+          <div class="title">Далее</div></a></center>
+    </div>
+    <div class="slide n11 socials">
+      <h2>Страницы в соцсетях</h2>
+      <form>
+        <div class="row"><img src="images/ico-tw.png" class="ico">
+          <input name="tw" placeholder="Twitter">
+        </div>
+        <div class="row"><img src="images/ico-vk.png" class="ico">
+          <input name="vk" placeholder="Вконтакте">
+        </div>
+        <div class="row"><img src="images/ico-fb.png" class="ico">
+          <input name="fb" placeholder="Facebook">
+        </div>
+        <div class="row"><img src="images/ico-ok.png" class="ico">
+          <input name="ok" placeholder="Одноклассники">
+        </div>
+      </form>
+      <center><a href="#isparicipate" class="btn disabled">
+          <div class="title">Отправить</div></a></center>
+    </div>
+    <div class="slide n12 isparicipate">
+      <h2 style="margin-top: 165px;">ваша заявка приянята!</h2>
+      <h2 style="margin-top: 75px; margin-bottom: 40px;">Теперь вы можете:</h2>
+      <center><a href="#print" class="btn">
+          <div class="title">Распечатать фото</div></a><a href="#email" class="btn">
+          <div class="title">Отправить по e-mail</div></a></center>
+    </div>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

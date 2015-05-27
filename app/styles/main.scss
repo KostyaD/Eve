@@ -1,0 +1,447 @@
+// bower:scss
+@import "../../bower_components/normalize-scss/_normalize.scss";
+// endbower
+
+@font-face {
+  font-family: 'GothamPro-Light';
+  src: url('../fonts/GothamPro-Light.eot');
+  src: url('../fonts/GothamPro-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/GothamPro-Light.ttf') format('truetype'),
+       url('../fonts/GothamPro-Light.svg#GothamPro-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('../fonts/Lato-Regular.eot');
+  src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Lato-Regular.ttf') format('truetype'),
+       url('../fonts/Lato-Regular.svg#Lato-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-Medium';
+  src: url('../fonts/Lato-Medium.eot');
+  src: url('../fonts/Lato-Medium.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Lato-Medium.ttf') format('truetype'),
+       url('../fonts/Lato-Medium.svg#Lato-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('../fonts/Lato-Light.eot');
+  src: url('../fonts/Lato-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Lato-Light.ttf') format('truetype'),
+       url('../fonts/Lato-Light.svg#Lato-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-Italic';
+  src: url('../fonts/Lato-Italic.eot');
+  src: url('../fonts/Lato-Italic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Lato-Italic.ttf') format('truetype'),
+       url('../fonts/Lato-Italic.svg#Lato-Italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamPro-Medium';
+  src: url('../fonts/GothamPro-Medium.eot');
+  src: url('../fonts/GothamPro-Medium.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/GothamPro-Medium.ttf') format('truetype'),
+       url('../fonts/GothamPro-Medium.svg#GothamPro-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+
+.cf {
+  clear: both;
+}
+
+.reload {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: red;
+  z-index: 9999999;
+}
+
+body, html {
+  width: 1024px;
+  height: 768px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body {
+  background: #011d6d;
+  //border: 1px solid red;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+* {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.btn {
+  background: url('../images/btn-bg.png');
+  background-size: cover;
+  background-position: top;
+  width: (744/2)+px;
+  height: (204/2)+px;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  position: relative;
+  font-family: 'GothamPro-Medium';
+  margin: (64-10)/2+px 0;
+  text-align: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+  &:before {
+    display: inline-block;
+    content: '';
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .title {
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: -0.0005em;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &.disabled {
+    opacity: 0.5;
+  }
+  &:active, &:hover {
+    background-position: bottom;
+  }
+  &.disabled {
+    &:active, &:hover {
+      background-position: top;
+    } 
+  }
+}
+
+.v-center {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+h2 {
+  font-family: 'Lato-Light';
+  font-size: (76/2)+px;
+  margin: 0;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.slide {
+  position: absolute;
+  width: 1024px;
+  height: 768px;
+  top: 0px;
+  left: 0;
+  opacity: 0;
+  transform: translate(0px, -768px);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  &.active {
+    top: 0;
+    transform: translate(0px, 0px);
+    opacity: 1;
+    display: block;
+    .photo-list {
+      a.btn {
+        position: fixed;
+      }
+    }
+  }
+  &.n1 {
+    &:before {
+      display: inline-block;
+      content: '';
+      width: 0;
+      height: 768px;
+      vertical-align: middle;
+    }
+    text-align: center;
+    .text {
+      margin: -20px 0;
+    }
+  }
+  &.print, &.email, &.participate-photo {
+    h2 {
+      margin-top: 75px;
+    }
+  }
+  &.n3 {
+    text-align: center;
+  }
+  &.isemail {
+    text-align: center;
+    input {
+      height: 88px;
+      width: (892/2)+px;
+      background: none;
+      padding: 0;
+      border: 2px solid white;
+      color: white;
+      font-size: 38px;
+    }
+  }
+  &.participate {
+    h2 {
+      margin-top: 60px;
+      margin-bottom: 70px;
+    }
+    .text {
+      color: white;
+      font-family: "Lato-Light";
+      //font-weight: lighter;
+      font-size: (38/2)+px;
+      line-height: (56/2)+px;
+      width: (1380/2)+px;
+      margin: 0 auto;
+    }
+    input[type="checkbox"] {
+      position: relative;
+      left: -9999px;
+      &:before {
+        position: relative;
+        left: 9978px;
+        top: -5px;
+        display: block;
+        content: '';
+        background: url('../images/checkbox-white.png');
+        background-size: cover;
+        width: 21px;
+        height: 21px;
+      }
+      &:checked:before {
+        background-position: bottom;
+      }
+    }
+    label {
+      font-family: 'Lato-Italic';
+      font-weight: lighter;
+      font-size: (39.58/2)+px;
+    }
+  }
+  &.answer {
+    h2 {
+      margin-top: 65px;
+      margin-bottom: 70px;
+    }
+    .text {
+      color: white;
+      font-family: 'Lato-Light';
+      font-size: (54/2)+px;
+      font-weight: bold;
+      text-align: center;
+    }
+    textarea {
+      width: (1380/2)+px;
+      height: (570/2)+px;
+      margin: 0 auto;
+      display: block;
+      background: none;
+      border: 2px solid white;
+      border-radius: 5px;
+      margin-top: 25px;
+      margin-bottom: 60px;
+      padding: 15px;
+      color: white;
+      font-family: "Lato";
+      font-size: (54/2)+px;
+      box-sizing: border-box;
+    }
+  }
+  &.preview {
+    h2 {
+      margin-top: (120/2)+px;
+    }
+    .row {
+      width: (1838/2)+px;
+      margin: 0 auto;
+      margin-top: (152/2)+px;
+      .photo {
+        width: (890/2)+px;
+        float: left;
+        img {
+          width: 100%;
+        }
+      }
+      .text {
+        float: left;
+        margin-left: 44px;
+        width: (800/2)+px;
+        font-size: (38/2)+px;
+      }
+      a {
+        color: white;
+        text-decoration: underline;
+        display: inline-block;
+        font-style: italic;
+        font-size: 20px;
+      }
+      a.edit_text {
+        margin-left: 32px;
+        &:before {
+          background: url('../images/ico-pencile.png');
+          background-size: cover;
+          width: (27/2)+px;
+          height: (27/2)+px;
+          display: block;
+          position: absolute;
+          content: '';
+          margin-left: -28px;
+          margin-top: 2px;
+        }
+      }
+      a.edit_photo {
+        margin-left: 32px;
+        margin-top: 15px;
+        &:before {
+          background: url('../images/ico-img.png');
+          background-size: cover;
+          width: (36/2)+px;
+          height: (36/2)+px;
+          display: block;
+          position: absolute;
+          content: '';
+          margin-left: -30px;
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+  &.socials {
+    h2 {
+      margin-top: (128/2)+px;
+      margin-bottom: 60px;
+    }
+    form {
+      text-align: center;
+      width: 450px;
+      margin: 0 auto;
+      .row {
+        margin-left: -40px;
+      }
+      .ico {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: (35/2)+px;
+      }
+      input {
+        display: inline-block;
+        vertical-align: middle;
+        width: 400px;
+        height: 62px;
+        background: none;
+        border: 1px solid white;
+        border-radius: 2px;
+        margin: 18px 0;
+        padding: 0 18px;
+        box-sizing: border-box;
+        font-family: "Lato";
+        font-weight: lighter;
+        color: white;
+      }
+    }
+  }
+}
+
+.text {
+  color: white;
+  font-family: 'Lato-Light';
+}
+
+form {
+  &.photo-list {
+    width: 936px;
+    height: (1190/2)+px;
+    margin: 0 auto;
+    margin-top: 30px;
+    //margin: 0 auto;
+    overflow: auto;
+    //position: absolute;
+    //bottom: 0px;
+    box-sizing: border-box;
+    //left: 50%;
+    //margin-left: -(936/2)+px;
+    padding-bottom: 100px;
+    -webkit-mask-image: -webkit-gradient(
+    linear, center top, center bottom, 
+    color-stop(0.85,  rgba(0,0,0,1)),
+    color-stop(1.0,  rgba(0,0,0,0)));
+    label {
+      display: block;
+      float: left;
+      width: 312px;
+      height: (418/2)+px;
+      background-size: cover;
+      position: relative;
+      input {
+        width: 0;
+        height: 0;
+        border: none;
+        background: none;
+        font-size: 0;
+        display: block;
+        position: absolute;
+        left: -9999px;
+        &:before {
+          background: url('../images/checkbox-blue.png') bottom;
+          content: '';
+          position: absolute;
+          display: block;
+          width: (56/2)+px;
+          height: (56/2)+px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          left: 9999px;
+          margin-left: 136px;
+          margin-top: 170px;
+        }
+        &:checked {
+          &:before {
+            background-position: top;            
+          }
+        }
+        &:disabled {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+    .btn {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      margin-left: -(364/2)+px;
+      //background-color: rgba(32, 103, 178, 0.7);
+    }
+  }
+}
