@@ -509,3 +509,77 @@ form {
     }
   }
 }
+
+.center-all {
+  &:before {
+    display: inline-block;
+    content: '';
+    width: 0;
+    height: 768px;
+    vertical-align: middle;
+  }
+  text-align: center;
+  .text {
+    margin: -20px 0;
+  }
+
+  .btn {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.select-cont {
+  display: inline-block;
+  position: relative;
+  width: 400px;
+  height: 65px;
+  overflow: hidden;
+  border: 1px solid #fff;
+  margin: (135/2)+px 0;
+
+  .select-text {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 35px;
+    top: 0;
+    bottom: 0;
+    line-height: 65px;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Lato-Light";
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    right: (35/2)+px;
+    top: 50%;
+    margin-top: -2.5px;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #fff transparent transparent transparent;
+  }
+
+  select {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    line-height: 65px;
+    padding: 0 65px;
+    opacity: 0;
+
+    option {
+      height: 65px;
+      line-height: 65px;
+      padding: 65px 0;
+    }
+  }
+}

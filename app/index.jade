@@ -13,6 +13,23 @@ block content
       //- .text или
       //- a.btn(href="#email")
         .title Отправить по e-mail
+  .slide.center-all.city
+    .v-center
+      h2 Выберите город
+      .select-cont.js-styled-select
+        .select-text.js-select-text
+        select.styled-select
+          option Астрахань
+          option Белгород
+          option Краснодар
+          option Курск
+          option Нальчик
+          option Пятигорск
+          option Ростов-на-Дону
+          option Сочи
+      .btn-cont
+        a.btn(href="#city")
+          .title Продолжить
   .slide.n2.print
     h2 Выберите лучшее фото
     form.photo-list(data-maxselect=1, data-url=url+'/print/')
@@ -68,8 +85,9 @@ block content
           span.title Принимаю условия конкурса
         br
         br
-        a.btn(href="#participate-photo")
-          .title Выбрать фото
+        //- a.btn(href="#participate-photo")
+        a.btn(href="#city")
+          .title Продолжить
   .slide.n8.participate-photo
     h2 Выберите фото для конкурса
     form.photo-list(data-maxselect=1)

@@ -172,7 +172,19 @@ $(document).ready(function(){
   .on('touchend', '.btn', function(){
     $(this).removeClass('btn-on-active');
   });
-
+  var styledSelect = function() {
+    $('.js-styled-select').each(function(){
+      var parent = $(this),
+          select = parent.find('select'),
+          text_cont = parent.find('.js-select-text');
+      var setText = function() {
+        text_cont.text(select.find('option:selected').text());
+      }
+      setText();
+      select.on('change', setText);
+    });
+  }
+  styledSelect();
   var background = function() {
     var settings = {
       count: 3,
