@@ -11,7 +11,7 @@ $(document).ready(function(){
       var id = value.id;
       $('.photo-list').each(function(index){
         $(this).prepend(' \
-          <label style="background-image:url('+_url+'/media/'+src+');"> \
+          <label style="background-image:url('+_url+src+');"> \
             <input type="checkbox" name="photo" value="'+id+'"> \
           </label> \
         ')
@@ -38,7 +38,6 @@ $(document).ready(function(){
   
   $(window).load(function(){
     $('.slide.n1').addClass('active');
-  
     $('body').on('tap', '.btn, .btn-nostyle', function(e){
       e.preventDefault();
       
@@ -46,7 +45,7 @@ $(document).ready(function(){
       
       if (href[1] && $('.'+href[1]).size()>0 && !$(this).is('.disabled')) {
         if (href[1]=='isprinted') {
-          var _id = $('.slide.print .photo-list input[type="checkbox"]:checked').val()
+          var _id = $('.slide.print .photo-list input[type="checkbox"]:checked').val();
           $.ajax({
             url: _url+"/print/"+_id,
             success: function(data){
@@ -212,4 +211,21 @@ $(document).ready(function(){
   }
   background();
   
+  /*
+  var reload_time = 30;
+  var reload_timer;
+  
+  function startReloadTimer(){
+    clearTimeout(reload_timer);
+    reload_timer = setTimeout(function(){
+      location.href='';
+    }, reload_time*1000);
+  }
+  
+  $(document).on('click touchstart touchend', function () {
+    startReloadTimer();
+  });
+  
+  startReloadTimer();
+  */
 });
