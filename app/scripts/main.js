@@ -1,5 +1,5 @@
 /* jshint devel:true */
-console.log('\'Allo \'Allo!');
+//console.log('\'Allo \'Allo!');
 
 $(document).ready(function(){
   
@@ -91,9 +91,11 @@ $(document).ready(function(){
           var serialized = $('.slide.participate-photo .photo-list').serialize();
           var answer = $('.slide.answer textarea[name="answer"]').val();
           var socials = $('.slide.socials form').serialize();
+          var reg_form = $('.js-reg-form').serialize();
+          var city_form = $('.js-city-form').serialize();
           $.ajax({
             url: _url+"/participate/",
-            data: serialized + '&' + socials + '&' + $.param({
+            data: reg_form + '&' + city_form + '&' + serialized + '&' + socials + '&' + $.param({
               answer: answer
             }),
             success: function(data){
@@ -171,19 +173,62 @@ $(document).ready(function(){
   .on('touchend', '.btn', function(){
     $(this).removeClass('btn-on-active');
   });
+  var placeholder = function() {
+    $('.js-placeholder').each(function(){
+      var parent = $(this);
+      var this_text = parent.find('.js-ph-text');
+      var this_input = parent.find('input');
+      this_input.attr('data-padding-left', this_text.width() + 19);
+      this_input.attr('data-placeholder', this_input.attr('placeholder'));
+      this_input.on('focus', function(){
+        if($(this).val().length == 0) {
+          var new_pad = parseInt($(this).attr('data-padding-left'));
+          $(this).css({
+            'padding-left': new_pad
+          });
+          $(this).attr('placeholder', '');
+          this_text.show();
+        }
+      }).on('focusout', function(){
+        if($(this).val().length == 0) {
+          $(this).css({
+            'padding-left': 18
+          });
+          $(this).attr('placeholder', $(this).attr('data-placeholder'));
+          this_text.hide();
+        }
+      })
+    });
+  }
+  var regForm = function() {
+    var form = $('.js-reg-form');
+    var this_btn = form.find('a[href]');
+    var checkForm = function() {
+      var filled = true;
+      form.find('input').each(function(){
+        if(!$(this).val().length) filled = false;
+      });
+      if(!filled) {
+        this_btn.addClass('disabled');
+      } else {
+        this_btn.removeClass('disabled');
+      }
+    }
+    form.on('input', checkForm);
+    checkForm();
+  }
   var styledSelect = function() {
     $('.js-styled-select').each(function(){
       var parent = $(this),
           select = parent.find('select'),
-          text_cont = parent.find('.js-select-text');
-      var setText = function() {
-        text_cont.text(select.find('option:selected').text());
-      }
+          text_cont = parent.find('.js-select-text'),
+          setText = function() {
+            text_cont.text(select.find('option:selected').text());
+          }
       setText();
       select.on('change', setText);
     });
   }
-  styledSelect();
   var background = function() {
     var settings = {
       count: 3,
@@ -209,6 +254,9 @@ $(document).ready(function(){
     }
     init();
   }
+  placeholder();
+  regForm();
+  styledSelect();
   background();
   
   /*

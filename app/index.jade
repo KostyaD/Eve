@@ -16,20 +16,34 @@ block content
   .slide.center-all.city
     .v-center
       h2 Выберите город
-      .select-cont.js-styled-select
-        .select-text.js-select-text
-        select.styled-select
-          option Астрахань
-          option Белгород
-          option Краснодар
-          option Курск
-          option Нальчик
-          option Пятигорск
-          option Ростов-на-Дону
-          option Сочи
+      form.js-city-form
+        .select-cont.js-styled-select
+          .select-text.js-select-text
+          select.styled-select(name="city")
+            option(value="Астрахань") Астрахань
+            option(value="Белгород") Белгород
+            option(value="Краснодар") Краснодар
+            option(value="Курск") Курск
+            option(value="Нальчик") Нальчик
+            option(value="Пятигорск") Пятигорск
+            option(value="Ростов-на-Дону") Ростов-на-Дону
+            option(value="Сочи") Сочи
       .btn-cont
-        a.btn(href="#city")
+        a.btn(href="#reg")
           .title Продолжить
+  .slide.center-all.reg
+    .v-center
+      h2 Зарегистрируйтесь
+      form.reg-form.js-reg-form
+        .input-cont
+          input(name="name" placeholder="Имя")
+        .input-cont
+          input(name="lastname" placeholder="Фамилия")
+        .input-cont
+          input(name="phone" placeholder="Телефон")
+        .btn-cont
+          a.btn(href="#email")
+            .title Продолжить
   .slide.n2.print
     h2 Выберите лучшее фото
     center.for-photo-list
@@ -557,10 +571,12 @@ block content
       .row(style="opacity:0;")
         img.ico(src="images/ico-tw.png")
         input(name="tw" placeholder="Twitter")
-      .row
+      .row.js-placeholder
+        .js-ph-text.placeholder http://vk.com/
         img.ico(src="images/ico-vk.png")
         input(name="vk" placeholder="Вконтакте")
-      .row
+      .row.js-placeholder
+        .js-ph-text.placeholder @
         img.ico(src="images/ico-fb.png" style="width:25px;")
         input(name="fb" placeholder="Instagram")
       .row(style="opacity:0;")

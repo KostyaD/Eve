@@ -344,6 +344,7 @@ h2 {
       margin-top: (120/2)+px;
     }
     .row {
+      position: relative;
       width: (1838/2)+px;
       margin: 0 auto;
       margin-top: (152/2)+px;
@@ -536,6 +537,29 @@ form {
   }
 }
 
+.reg-form {
+  padding: 40px 0 20px;
+}
+
+.input-cont {
+  margin: 40px 0;
+
+  input {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    height: 65px;
+    padding: 0 (35/2)+px;
+    font-family: "Lato-Light";
+    font-size: 20px;
+    border: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color: #fff;
+  }
+}
+
 .select-cont {
   display: inline-block;
   position: relative;
@@ -548,14 +572,15 @@ form {
   .select-text {
     position: absolute;
     z-index: 1;
-    left: 0;
+    left: (35/2)+px;
     right: 35px;
     top: 0;
     bottom: 0;
     line-height: 65px;
     color: #fff;
-    font-size: 20px;
+    font-size: 23px;
     font-family: "Lato-Light";
+    text-align: left;
   }
 
   &:before {
@@ -587,6 +612,26 @@ form {
       height: 65px;
       line-height: 65px;
       padding: 65px 0;
+    }
+  }
+}
+.socials {
+  .row {
+    position: relative;
+
+    .placeholder {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 86px;
+      line-height: 100px;
+      color: #fff;
+      font-family: "Lato-Light";
+      bottom: 0;
+    }
+
+    input {
+      text-transform: lowercase;
     }
   }
 }
