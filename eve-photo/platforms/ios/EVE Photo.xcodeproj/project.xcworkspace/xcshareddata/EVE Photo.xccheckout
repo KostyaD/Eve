@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>38C89621-F4B6-4FB8-9C51-E67DEA569E7E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EVE Photo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2077F48393A00F38A3F95562BE206F4E99C834FB</key>
+		<string>https://github.com/KostyaD/Eve.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>eve-photo/platforms/ios/EVE Photo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2077F48393A00F38A3F95562BE206F4E99C834FB</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/KostyaD/Eve.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2077F48393A00F38A3F95562BE206F4E99C834FB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2077F48393A00F38A3F95562BE206F4E99C834FB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>eve-phonegap</string>
+		</dict>
+	</array>
+</dict>
+</plist>
