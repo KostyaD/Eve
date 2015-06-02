@@ -49,10 +49,11 @@ $(document).ready(function(){
           $.ajax({
             url: _url+"/print/"+_id,
             success: function(data){
-              $('.slide').removeClass('active');
-              $('.'+href[1]).addClass('active');
+
             }
           });
+          $('.slide').removeClass('active');
+          $('.'+href[1]).addClass('active');
         } else if(href[1]=='isemailsend'){
           var _ids = [];
           var email;
@@ -69,10 +70,10 @@ $(document).ready(function(){
             }),
             success: function(data){
               console.log(data);
-              $('.slide').removeClass('active');
-              $('.'+href[1]).addClass('active');
             }
           });
+          $('.slide').removeClass('active');
+          $('.'+href[1]).addClass('active');
         } else if(href[1]=='preview'){
           var _src  = $('.participate-photo .photo-list input:checked').closest('label').css('background-image').replace('url(','').replace(')','');
           var _text = $('.slide.answer textarea[name="answer"]').val();
@@ -100,10 +101,10 @@ $(document).ready(function(){
             }),
             success: function(data){
               console.log(data);
-              $('.slide').removeClass('active');
-              $('.'+href[1]).addClass('active');
             }
           });
+          $('.slide').removeClass('active');
+          $('.'+href[1]).addClass('active');
 
         } else {
           $('.slide').removeClass('active');
@@ -124,7 +125,7 @@ $(document).ready(function(){
       };
     });
     
-    $('.socials input').bind('input propertychange', function(e){
+    /*$('.socials input').bind('input propertychange', function(e){
       var _val = '';
       $('.socials input').each(function(){
         if ($(this).val()!='') {
@@ -136,7 +137,7 @@ $(document).ready(function(){
       } else {
         $(this).closest('.slide').find('a.btn').removeClass('disabled');
       };
-    });
+    });*/
     
     $('input[name="email"]').bind('input propertychange', function(e){
       if (!IsEmail($(this).val())) {

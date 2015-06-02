@@ -20,6 +20,46 @@
           <div class="title">принять участие<br> в конкурсе</div></a>
       </div>
     </div>
+    <div class="slide center-all city">
+      <div class="v-center">
+        <h2>Выберите город</h2>
+        <form class="js-city-form">
+          <div class="select-cont js-styled-select">
+            <div class="select-text js-select-text"></div>
+            <select name="city" class="styled-select">
+              <option value="Астрахань">Астрахань</option>
+              <option value="Белгород">Белгород</option>
+              <option value="Краснодар">Краснодар</option>
+              <option value="Курск">Курск</option>
+              <option value="Нальчик">Нальчик</option>
+              <option value="Пятигорск">Пятигорск</option>
+              <option value="Ростов-на-Дону">Ростов-на-Дону</option>
+              <option value="Сочи">Сочи</option>
+            </select>
+          </div>
+        </form>
+        <div class="btn-cont"><a href="#reg" class="btn">
+            <div class="title">Продолжить</div></a></div>
+      </div>
+    </div>
+    <div class="slide center-all reg">
+      <div class="v-center">
+        <h2>Зарегистрируйтесь</h2>
+        <form class="reg-form js-reg-form">
+          <div class="input-cont">
+            <input name="name" placeholder="Имя">
+          </div>
+          <div class="input-cont">
+            <input name="lastname" placeholder="Фамилия">
+          </div>
+          <div class="input-cont">
+            <input name="phone" placeholder="Телефон">
+          </div>
+          <div class="btn-cont"><a href="#participate-photo" class="btn">
+              <div class="title">Продолжить</div></a></div>
+        </form>
+      </div>
+    </div>
     <div class="slide n2 print">
       <h2>Выберите лучшее фото</h2>
       <center class="for-photo-list"><a href="#isprinted" class="btn for-photo-list disabled">
@@ -509,8 +549,8 @@
         <center><br><br>
           <label>
             <input type="checkbox" name="agree" checked><span class="title">Принимаю условия конкурса</span>
-          </label><br><br><a href="#participate-photo" class="btn">
-            <div class="title">Выбрать фото</div></a>
+          </label><br><br><a href="#city" class="btn">
+            <div class="title">Продолжить</div></a>
         </center>
       </div>
     </div>
@@ -533,7 +573,7 @@
       <h2>Ваша заявка на участие</h2>
       <div class="row">
         <div class="photo"><img src="http://dummyimage.com/890x598/"></div>
-        <div class="text"><strong>Быть на вершине стиля для меня это:</strong><br>
+        <div class="text"><strong>Быть стильным для меня это:</strong><br>
           <p></p><a href="#answer" class="edit_text btn-nostyle">Редактировать текст</a><br><a href="#participate-photo" class="edit_photo btn-nostyle">Выбрать другое фото</a>
         </div>
         <div class="cf"></div>
@@ -547,17 +587,19 @@
         <div style="opacity:0;" class="row"><img src="images/ico-tw.png" class="ico">
           <input name="tw" placeholder="Twitter">
         </div>
-        <div class="row"><img src="images/ico-vk.png" class="ico">
+        <div class="row js-placeholder">
+          <div class="js-ph-text placeholder">http://vk.com/</div><img src="images/ico-vk.png" class="ico">
           <input name="vk" placeholder="Вконтакте">
         </div>
-        <div class="row"><img src="images/ico-fb.png" style="width:25px;" class="ico">
+        <div class="row js-placeholder">
+          <div class="js-ph-text placeholder">@</div><img src="images/ico-fb.png" style="width:25px;" class="ico">
           <input name="fb" placeholder="Instagram">
         </div>
         <div style="opacity:0;" class="row"><img src="images/ico-ok.png" class="ico">
           <input name="ok" placeholder="Одноклассники">
         </div>
       </form>
-      <center><a href="#isparicipate" class="btn disabled">
+      <center><a href="#isparicipate" class="btn">
           <div class="title">Отправить</div></a></center>
     </div>
     <div class="slide n12 isparicipate">
